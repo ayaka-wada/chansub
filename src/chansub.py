@@ -29,7 +29,7 @@ for i in d.name:
 print(len(names), ': ', names)
 no = len(sys.argv)-1
 x = []
-for i in range(2000, 2021):
+for i in range(2000, 2022):
  x.append(i)
 cnt = []
 for i in range(no):
@@ -42,7 +42,7 @@ for i in range(no):
 nme = []
 #print(len(cnt))
 for j in range(len(cnt)):
- for i in range(2000, 2021):
+ for i in range(2000, 2022):
   nme.append(int(cnt[j][i]))
 
 if len(cnt) == 1:
