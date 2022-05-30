@@ -6,16 +6,16 @@ import sys,os
 if os.path.exists('./SIPRI-Milex-data-1949-2020_0.xlsx'):
  wb=openpyxl.load_workbook('SIPRI-Milex-data-1949-2020_0.xlsx')
 else:
- sp.call("wget https://sipri.org/sites/default/files/SIPRI-Milex-data-1949-2020_0.xlsx||wget https://github.com/ytakefuji/defense/raw/main/SIPRI-Milex-data-1949-2020_0.xlsx",shell=True)
- wb=openpyxl.load_workbook('SIPRI-Milex-data-1949-2020_0.xlsx')
-sheet=wb['Constant (2019) USD']
-sheet.delete_rows(sheet.min_row,5)
+ sp.call("wget https://github.com/ayaka-wada/chasub/raw/main/Number_of_channel_subscribers.xlsx",shell=True)
+ wb=openpyxl.load_workbook('Number_of_channel_subscribers.xls')
+sheet=wb['Sheet1']
+# sheet.delete_rows(sheet.min_row,5)
 wb.save('result.xlsx')
-d=pd.read_excel('result.xlsx',engine='openpyxl',sheet_name='Constant (2019) USD')
+d=pd.read_excel('result.xlsx',engine='openpyxl',sheet_name='Sheet1')
 size=0
 countries=[]
 for i in d.Country:
- if i!='Yemen':
+ if i!='兎田ぺこら':
   countries.append(i)
   size=size+1
  else: 
