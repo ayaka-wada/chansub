@@ -6,7 +6,7 @@ import sys,os
 if os.path.exists('./SIPRI-Milex-data-1949-2020_0.xlsx'):
  wb=openpyxl.load_workbook('SIPRI-Milex-data-1949-2020_0.xlsx')
 else:
- sp.call("wget https://github.com/ayaka-wada/chasub/raw/main/Number_of_channel_subscribers.xlsx",shell=True)
+ sp.call("wget https://github.com/ayaka-wada/chansub/blob/2348fd0f0f5278a4b72df1731aa207739b6d4e52/Number_of_channel_subscribers.xlsx",shell=True)
  wb=openpyxl.load_workbook('Number_of_channel_subscribers.xls')
 sheet=wb['Sheet1']
 # sheet.delete_rows(sheet.min_row,5)
