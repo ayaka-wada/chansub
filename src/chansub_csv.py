@@ -42,7 +42,7 @@ class main:
    plt.legend(handles=handles)
    plt.savefig(name+".png")
    plt.show()
-country=""
+name=""
 days=400
 degree=5
 if len(sys.argv)==1:
@@ -79,7 +79,7 @@ if len(sys.argv)==4:
     print('use higher degree number')
     sys.exit()
  else:
-  print('correct country name')
+  print('correct name')
   sys.exit()
 m=main()
 m.main(name=name,days=days,degree=degree)
