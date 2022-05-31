@@ -21,12 +21,12 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     package_dir={"": "src"},
-    py_modules=['milspend'],
+    py_modules=['chansub'],
     packages=setuptools.find_packages(where="src"),
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     entry_points = {
         'console_scripts': [
-            'milspend = milspend:main'
+            'chansub = chansub:main'
         ]
     },
 )

@@ -12,10 +12,10 @@ sp.call("cat Number_of_channel_subscribers.csv|sed '2,$s/,-/,/g' >new",shell=Tru
 sp.call("mv new Number_of_channel_subscribers.csv",shell=True)
 data=pd.read_csv("Number_of_channel_subscribers.csv")
 data.fillna(0,inplace=True)
-sp.call("rm Number_of_channel_subscribers.csv",shell=True)
+# sp.call("rm Number_of_channel_subscribers.csv",shell=True)
 
 class main:
- def main(self,name,days=400,degree=7):
+ def main(self,name,days=737,degree=7):
    n=len(data[name])
    y=data[name][n-days:n]
    for i in y:
@@ -43,7 +43,7 @@ class main:
    plt.savefig(name+".png")
    plt.show()
 name=""
-days=400
+days=737
 degree=5
 if len(sys.argv)==1:
  print('name is needed!')
