@@ -33,6 +33,7 @@ def main():
     # x軸の文字を回転
     plt.xticks(rotation=60)
     plt.show()
+    plt.savefig("result.png")
 
 if __name__ == '__main__':
     main()
