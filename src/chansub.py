@@ -34,3 +34,6 @@ def main():
     plt.xticks(rotation=60)
     plt.show()
 
+if __name__ == '__main__':
+    main()
+
