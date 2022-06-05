@@ -3,18 +3,15 @@ import matplotlib.pyplot as plt
 import urllib.request
 from io import StringIO
 
-
 url = "https://raw.githubusercontent.com/ayaka-wada/chansub/main/src/Number_of_channel_subscribers.csv"
+# print(url)
+# res = urllib.request.urlopen(url)
+# res = res.read().decode('utf-8"')
+csv = pd.read_csv(url, parse_dates=['date'], index_col='date')
+df = csv.interpolate(limit_direction='both')
 
-def read_csv(url):
-    print(url)
-    res = urllib.request.urlopen(url)
-    res = res.read().decode('utf-8"')
-    csv = pd.read_csv(StringIO( res), parse_dates=['date'], index_col='date')
-    df = csv.interpolate(limit_direction='both')
-    return df
 
-def plot():
+def main():
     fig, ax = plt.subplots()
     ax.plot(df.index, df['Tokino Sora'], label="Tokino Sora")
     ax.plot(df.index, df['Houshyou Marine'], label="Houshyou Marine")
@@ -24,21 +21,16 @@ def plot():
     ax.plot(df.index, df['Kiryu Coco'], label="Kiryu Coco")
 
 
-    #ラベルの名前付け
+    # ラベルの名前付け
     ax.set_xlabel('Date')
     ax.set_ylabel('channel subscribers')
-    #y軸の範囲設定
-    ax.set_ylim(0,2300000)
+    # y軸の範囲設定
+    ax.set_ylim(0, 2300000)
     # 指数表記から普通の表記に変換
     plt.ticklabel_format(style='plain',axis='y')
-    #凡例
+    # 凡例
     plt.legend(loc="upper left", fontsize=10)
-    #x軸の文字を回転
+    # x軸の文字を回転
     plt.xticks(rotation=60)
     plt.show()
 
-
-
-def main():
-    read_csv(url)
-    plot()
